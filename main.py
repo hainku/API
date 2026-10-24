@@ -9,8 +9,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-@app.get("/login")
-def login(idnum:str=Form(...) pw:str=Form(...)):
+@app.post("/login")
+def login(idnum:str=Form(...), pw:str=Form(...)):
     u=User()
     res=u.login(idnum,pw)
     return res

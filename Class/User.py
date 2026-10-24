@@ -1,11 +1,11 @@
 from .Database import Database
 class User(Database):
     def __init__(self):
-        super.__init__()
+        super().__init__()
     
     def login(self,idnum:str ,pw:str):
-        sql="select * from user where Username=%s and Password=%s"
-        cursor.self.conn.cursor(dictionary=True)
+        sql="select * from user where IdNumber=%s and Password=%s"
+        cursor=self.conn.cursor(dictionary=True)
         cursor.execute(sql,(idnum,pw))
         res=cursor.fetchone()
         cursor.close()
