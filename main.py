@@ -10,7 +10,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 @app.get("/login")
-def login(idnum:str,=Form(...) pw:str=Form(...)):
+def login(idnum:str=Form(...) pw:str=Form(...)):
     u=User()
     res=u.login(idnum,pw)
     return res
